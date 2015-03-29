@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmDatabase.msgnode="ComIbmDatabase.msgnode" xmlns:ComIbmHTTPHeader.msgnode="ComIbmHTTPHeader.msgnode" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmMQInput.msgnode="ComIbmMQInput.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmMSLMapping.msgnode="ComIbmMSLMapping.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmSOAPExtract.msgnode="ComIbmSOAPExtract.msgnode"
+    xmlns:ComIbmSOAPRequest.msgnode="ComIbmSOAPRequest.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:letobank_common_utils_logging_AddLog.subflow="letobank/common/utils/logging/AddLog.subflow" xmlns:letobank_common_utils_logging_SendLogToQueue.subflow="letobank/common/utils/logging/SendLogToQueue.subflow" xmlns:letobank_common_utils_senders_SenderRetryPrepareLoc.subflow="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow"
+    xmlns:letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow="letobank/common/utils/senders/SenderWSResponseCheckerLoc.subflow" xmlns:letobank_srvbrpos_v1_adp_CreateErrorCode.subflow="letobank/srvbrpos/v1/adp/CreateErrorCode.subflow" xmlns:letobank_srvbrpos_v1_adp_restoreRFH2usr.subflow="letobank/srvbrpos/v1/adp/restoreRFH2usr.subflow" xmlns:letobank_srvbrpos_v1_adp_saveRFH2usr.subflow="letobank/srvbrpos/v1/adp/saveRFH2usr.subflow" xmlns:letobank_srvbrpos_v1_srv_restoreReplyIdent.subflow="letobank/srvbrpos/v1/srv/restoreReplyIdent.subflow"
+    xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl.msgflow"
+    nsPrefix="letobank_srvbrpos_v1_adp_letobank_srvbrpos_adp_rqhl.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.queueIN" name="queueIN" lowerBound="1" defaultValueLiteral="LETOBANK.ADP.ADPSBL.V1.BRPOS.REQ">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.queueOUT" name="queueOUT" defaultValueLiteral="LETOBANK.ADP.ADPSBL.V1.BRPOS.RESP">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.queueErr" name="queueErr" defaultValueLiteral="LETOBANK.ADP.ADPSBL.V1.BRPOS.ERR">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.requestTimeout" name="requestTimeout" defaultValueLiteral="120">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.requestTimeout.internal_npcompiler" name="requestTimeout.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_offerCancelled" name="URL_offerCancelled" defaultValueLiteral="http://127.0.0.1:8080/offerCancelled">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_offerCancelled.internal_npcompiler" name="URL_offerCancelled.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkScoreResult" name="URL_checkScoreResult" defaultValueLiteral="http://127.0.0.1:8080/checkScore">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkScoreResult.internal_npcompiler" name="URL_checkScoreResult.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_getDocs" name="URL_getDocs" defaultValueLiteral="http://127.0.0.1:8080/getDocs">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_getDocs.internal_npcompiler" name="URL_getDocs.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_scopeOpty" name="URL_scopeOpty" defaultValueLiteral="http://172.19.2.12/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_scopeOpty.internal_npcompiler" name="URL_scopeOpty.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkStatus" name="URL_checkStatus" defaultValueLiteral="http://127.0.0.1:8080/checkStatus">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkStatus.internal_npcompiler" name="URL_checkStatus.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_docsSigned" name="URL_docsSigned" defaultValueLiteral="http://127.0.0.1:8080/docsSigned">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_docsSigned.internal_npcompiler" name="URL_docsSigned.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.dataSource" name="dataSource" defaultValueLiteral="SQLSERVERDB">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.dbSource" name="dbSource" lowerBound="1" defaultValueLiteral="SQLSERVERDB">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.DEFAULT_DELAY" name="DEFAULT_DELAY" lowerBound="1" defaultValueLiteral="0">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.DEFAULT_RETRY" name="DEFAULT_RETRY" lowerBound="1" defaultValueLiteral="0">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.srvName" name="srvName" lowerBound="1" defaultValueLiteral="SRVBRPOS">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.tableConfigsName" name="tableConfigsName" lowerBound="1" defaultValueLiteral="ESB_SENDERS_CONFIGURATION">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.moduleName" name="moduleName" lowerBound="1" defaultValueLiteral="BRPOS">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="letobank_srvbrpos_adp_rqhl" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V2.App/icons/full/obj16/letobank_srvbrpos_adp_rqhl.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V2.App/icons/full/obj30/letobank_srvbrpos_adp_rqhl.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="25,26" queueName="LETOBANK.ADP.ADPSBL.V1.BRCASHREQ" messageDomainProperty="XMLNSC">
+        <translation xmi:type="utility:ConstantString" string="MQ Input"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="610,530" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="scoreOpty" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://127.0.0.1:8080/scoreOpty" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="scopeOpty"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="442,286" queueName="LETOBANK.ADP.ADPSBL.V1.BRCASH.RESP">
+        <translation xmi:type="utility:ConstantString" string="Send to service"/>
+      </nodes>
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="316,27">
+        <translation xmi:type="utility:ConstantString" string="Route To Label"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="90,530" labelName="scoreOptyRequest">
+        <translation xmi:type="utility:ConstantString" string="scoreOptyRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="196,26" computeExpression="esql://routine/letobank.srvbrpos.v1.adp#Routing_Compute.Main" computeMode="all">
+        <translation xmi:type="utility:ConstantString" string="Routing Compute"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_12" location="230,530" mappingExpression="msl://{letobank.srvbrch.v1.adp}#scoreOpty_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="scoreOpty Input Mapping"/>
+        <longDescription xmi:type="utility:ConstantString" string="Сервис заведения полной формы анкеты (scoreOpty)"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="590,610" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="checkScoreResult" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://127.0.0.1:8080/checkScoreResult" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="checkScopeResult"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="70,610" labelName="checkScoreResultRequest">
+        <translation xmi:type="utility:ConstantString" string="checkScoreResultRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_15" location="210,610" mappingExpression="msl://{letobank.srvbrch.v1.adp}#checkScoreResult_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="checkScoreResult Mapping"/>
+        <longDescription xmi:type="utility:ConstantString" string="Получение результатов проверки"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_19" location="1110,530" mappingExpression="msl://{letobank.srvbrch.v1.adp}#scoreOpty_Output_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="scoreOpty Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_20" location="1430,710" httpInputHeader="DeleteHeader" httpResponseHeader="DeleteHeader">
+        <translation xmi:type="utility:ConstantString" string="HTTP Header"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_21" location="1090,610" mappingExpression="msl://{letobank.srvbrch.v1.adp}#checkScoreResult_Output_Mapping">
+        <translation xmi:type="utility:ConstantString" string="checkScoreResult Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="870,530">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="870,610">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract1"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="90,670" labelName="getDocsRequest">
+        <translation xmi:type="utility:ConstantString" string="getDocsRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_16" location="610,670" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="getDocs" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/getDocs" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="getDocs"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="870,670">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract2"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="1130,670" mappingExpression="msl://{letobank.srvbrch.v1.adp}#getDocs_Output_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="getDocs Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_22" location="230,670" mappingExpression="msl://{letobank.srvbrch.v1.adp}#getDocs_Input_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="getDocs Input Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_23" location="90,850" labelName="docsSignedRequest">
+        <translation xmi:type="utility:ConstantString" string="docsSignedRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_24" location="630,870" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="docsSigned" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/docsSigned" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="docsSigned"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_25" location="890,870">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract3"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_26" location="1130,870" mappingExpression="msl://{letobank.srvbrch.v1.adp}#docsSigned_Output_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="docsSigned Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_27" location="230,850" mappingExpression="msl://{letobank.srvbrch.v1.adp}#docsSigned_Input_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="docsSigned Input Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_28" location="70,730" labelName="checkStatusRequest">
+        <translation xmi:type="utility:ConstantString" string="checkStatusRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_29" location="630,750" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="checkStatus" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/checkStatus" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="checkStatus"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_30" location="890,750">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract4"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_31" location="1110,750" mappingExpression="msl://{letobank.srvbrch.v1.adp}#checkStatus_Output_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="checkStatus Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_32" location="210,730" mappingExpression="msl://{letobank.srvbrch.v1.adp}#checkStatus_Input_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="checkStatus Input Mapping"/>
+        <longDescription xmi:type="utility:ConstantString" string="Сервис заведения полной формы анкеты (scoreOpty)"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_33" location="90,790" labelName="offerCancelledRequest">
+        <translation xmi:type="utility:ConstantString" string="offerCancelledRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_34" location="610,810" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="offerCancelled" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/offerCancelled" sslProtocol="TLS" validateTiming="complete">
+        <translation xmi:type="utility:ConstantString" string="offerCancelled"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_35" location="890,810">
+        <translation xmi:type="utility:ConstantString" string="SOAP Extract5"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_36" location="1110,810" mappingExpression="msl://{letobank.srvbrch.v1.adp}#offerCancelled_Output_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="offerCancelled Output Mapping"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_37" location="210,790" mappingExpression="msl://{letobank.srvbrch.v1.adp}#offerCancelled_Input_Message_Mapping">
+        <translation xmi:type="utility:ConstantString" string="offerCancelled Input Mapping"/>
+        <longDescription xmi:type="utility:ConstantString" string="Сервис заведения полной формы анкеты (scoreOpty)"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_50" location="490,530" dataSource="SQLSERVERDB" dbSource="SQLSERVERDB" errorCode="100" errMesg="Сервис недоступен, повторите попытку позднее">
+        <translation xmi:type="utility:ConstantString" string="SenderRetryScope"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_51" location="730,530">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespScope"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_52" location="470,610" errorCode="100" errMesg="Сервис недоступен, повторите попытку позднее">
+        <translation xmi:type="utility:ConstantString" string="SenderRetryCheckScore"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_53" location="710,610">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespCheckeScope"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_54" location="470,670" errorCode="100" errMesg="Сервис недоступен, повторите попытку позднее">
+        <translation xmi:type="utility:ConstantString" string="SenderRetrygetDocs"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_55" location="730,670">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespGetDocs"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_56" location="490,870" errMesg="Запрос принят и будет обработан в ближайшее время.">
+        <translation xmi:type="utility:ConstantString" string="SenderRetrydocsSig"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_57" location="730,870">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespDocsSign"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_58" location="470,750" errorCode="100" errMesg="Сервис недоступен, повторите попытку позднее">
+        <translation xmi:type="utility:ConstantString" string="SenderRetryCheckStatus"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_59" location="710,750">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespCheckStatus"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_60" location="490,810" errMesg="Запрос принят и будет обработан в ближайшее время.">
+        <translation xmi:type="utility:ConstantString" string="SenderRetryOffer"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_61" location="730,810">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespOffer"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_62" location="302,286" errorCode="101" errMesg="Техническая ошибка. Сервис Кредитный брокер недоступен. Обратитесь в техническую поддержку">
+        <translation xmi:type="utility:ConstantString" string="SenderRetryPrepareLoc"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow:FCMComposite_1" xmi:id="FCMComposite_1_63" location="528,290">
+        <translation xmi:type="utility:ConstantString" string="SenderWSResponseCheckerLoc"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_saveRFH2usr.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="107,26">
+        <translation xmi:type="utility:ConstantString" string="saveRFH2usr"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_restoreRFH2usr.subflow:FCMComposite_1" xmi:id="FCMComposite_1_4" location="212,286">
+        <translation xmi:type="utility:ConstantString" string="restoreRFH2usr"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_38" location="370,530" isErrorLog="false" logMessage="Send scoreOpty_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: SO Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_39" location="370,610" isErrorLog="false" logMessage="Send  checkScoreResult_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: CS Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_40" location="370,670" isErrorLog="false" logMessage="Send getDocs_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: GD Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_41" location="390,870" isErrorLog="false" logMessage="Send docsSigned_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: DS Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_42" location="370,750" isErrorLog="false" logMessage="Send checkStatus_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: CStatus Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_43" location="390,810" isErrorLog="false" logMessage="Send offerCancelled_Input message for Siebel from MQ">
+        <translation xmi:type="utility:ConstantString" string="Log: OC Input"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_SendLogToQueue.subflow:FCMComposite_1" xmi:id="FCMComposite_1_44" location="706,290">
+        <translation xmi:type="utility:ConstantString" string="SendLogToQueue"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_45" location="1290,530" isErrorLog="false" logMessage="Send scoreOptyResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: SO Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_46" location="1310,610" isErrorLog="false" logMessage="Send checkScoreResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: CS Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_47" location="1310,670" isErrorLog="false" logMessage="Send getDocsResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: GD Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_48" location="1310,870" isErrorLog="false" logMessage="Send checkStatusResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: DS Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_49" location="1310,750" isErrorLog="false" logMessage="Send checkStatusResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: CStatus Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_65" location="1310,810" isErrorLog="false" logMessage="Send offerCancelledResponse message for MQ from Siebel">
+        <translation xmi:type="utility:ConstantString" string="Log: OC Output"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_66" location="97,89" attachBody="true" logLevel="1" logMessage="Failure error.">
+        <translation xmi:type="utility:ConstantString" string="Log: Failure"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_67" location="99,168" attachBody="true" logLevel="1" logMessage="Internal error.">
+        <translation xmi:type="utility:ConstantString" string="Log: Catch"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_69" location="456,172" computeExpression="esql://routine/letobank.srvbrpos.v1.adp#error_handling_adapter.Main" computeMode="all">
+        <translation xmi:type="utility:ConstantString" string="error handling"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_srv_restoreReplyIdent.subflow:FCMComposite_1" xmi:id="FCMComposite_1_73" location="342,172">
+        <translation xmi:type="utility:ConstantString" string="restoreReplyIdent"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_CreateErrorCode.subflow:FCMComposite_1" xmi:id="FCMComposite_1_77" location="1270,450" errorCode="103">
+        <translation xmi:type="utility:ConstantString" string="CreateErrorCode"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_CreateErrorCode.subflow:FCMComposite_1" xmi:id="FCMComposite_1_81" location="1310,930">
+        <translation xmi:type="utility:ConstantString" string="CreateErrorCode1"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_CreateErrorCode.subflow:FCMComposite_1" xmi:id="FCMComposite_1_64" location="350,930">
+        <translation xmi:type="utility:ConstantString" string="Transformation errorChange"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_adp_CreateErrorCode.subflow:FCMComposite_1" xmi:id="FCMComposite_1_68" location="410,350" errorCode="103">
+        <translation xmi:type="utility:ConstantString" string="Transformation errorReq"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_74" location="990,530" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_70" location="970,610" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg1"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_75" location="990,670" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg2"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_76" location="990,750" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg3"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_78" location="990,810" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg4"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_79" location="990,870" statement="esql://routine/letobank.srvbrpos.v1.adp#checkSiebelErrorMsg.Main">
+        <translation xmi:type="utility:ConstantString" string="CheckSiebelErrorMsg5"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_80" location="112,286" labelName="SendToMQ">
+        <translation xmi:type="utility:ConstantString" string="SendToMQ"/>
+      </nodes>
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_82" location="562,173">
+        <translation xmi:type="utility:ConstantString" string="Route SendToMQ"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_83" location="1526,710" statement="esql://routine/letobank.srvbrpos.v1.adp#Route_to_MQ.Main">
+        <translation xmi:type="utility:ConstantString" string="Send to MQ Label"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_85" location="210,168" queueName="TEST1">
+        <translation xmi:type="utility:ConstantString" string="Send to Queue Err"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_86" location="262,89" logLevel="1" logMessage="Internal error.">
+        <translation xmi:type="utility:ConstantString" string="Log: Error Send Queue"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_71" location="90,450" labelName="ScoreOptyWebRequest">
+        <translation xmi:type="utility:ConstantString" string="ScoreOptyWebRequest"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_72" location="250,450" queueName="BR_OUT">
+        <translation xmi:type="utility:ConstantString" string="MQ Output"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_14" targetNode="FCMComposite_1_12" sourceNode="FCMComposite_1_8" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_16" targetNode="FCMComposite_1_15" sourceNode="FCMComposite_1_14" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_12" targetNode="FCMComposite_1_22" sourceNode="FCMComposite_1_11" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_21" targetNode="FCMComposite_1_27" sourceNode="FCMComposite_1_23" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_27" targetNode="FCMComposite_1_32" sourceNode="FCMComposite_1_28" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_31" targetNode="FCMComposite_1_37" sourceNode="FCMComposite_1_33" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_17" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_50" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_28" targetNode="FCMComposite_1_9" sourceNode="FCMComposite_1_51" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_29" targetNode="FCMComposite_1_51" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_32" targetNode="FCMComposite_1_51" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_33" targetNode="FCMComposite_1_51" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_65" targetNode="FCMComposite_1_13" sourceNode="FCMComposite_1_52" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_66" targetNode="FCMComposite_1_53" sourceNode="FCMComposite_1_13" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_67" targetNode="FCMComposite_1_53" sourceNode="FCMComposite_1_13" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_68" targetNode="FCMComposite_1_53" sourceNode="FCMComposite_1_13" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_69" targetNode="FCMComposite_1_10" sourceNode="FCMComposite_1_53" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_71" targetNode="FCMComposite_1_16" sourceNode="FCMComposite_1_54" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_72" targetNode="FCMComposite_1_17" sourceNode="FCMComposite_1_55" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_73" targetNode="FCMComposite_1_55" sourceNode="FCMComposite_1_16" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_74" targetNode="FCMComposite_1_55" sourceNode="FCMComposite_1_16" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_75" targetNode="FCMComposite_1_55" sourceNode="FCMComposite_1_16" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_77" targetNode="FCMComposite_1_24" sourceNode="FCMComposite_1_56" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_78" targetNode="FCMComposite_1_25" sourceNode="FCMComposite_1_57" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_79" targetNode="FCMComposite_1_57" sourceNode="FCMComposite_1_24" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_80" targetNode="FCMComposite_1_57" sourceNode="FCMComposite_1_24" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_81" targetNode="FCMComposite_1_57" sourceNode="FCMComposite_1_24" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_83" targetNode="FCMComposite_1_29" sourceNode="FCMComposite_1_58" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_84" targetNode="FCMComposite_1_59" sourceNode="FCMComposite_1_29" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_85" targetNode="FCMComposite_1_30" sourceNode="FCMComposite_1_59" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_86" targetNode="FCMComposite_1_59" sourceNode="FCMComposite_1_29" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_87" targetNode="FCMComposite_1_59" sourceNode="FCMComposite_1_29" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_89" targetNode="FCMComposite_1_34" sourceNode="FCMComposite_1_60" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_90" targetNode="FCMComposite_1_61" sourceNode="FCMComposite_1_34" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_91" targetNode="FCMComposite_1_61" sourceNode="FCMComposite_1_34" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_92" targetNode="FCMComposite_1_61" sourceNode="FCMComposite_1_34" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input2"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_93" targetNode="FCMComposite_1_35" sourceNode="FCMComposite_1_61" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_95" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_62" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_96" targetNode="FCMComposite_1_63" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_97" targetNode="FCMComposite_1_63" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_62" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_38" sourceNode="FCMComposite_1_12" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="FCMComposite_1_50" sourceNode="FCMComposite_1_38" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_10" targetNode="FCMComposite_1_39" sourceNode="FCMComposite_1_15" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_13" targetNode="FCMComposite_1_52" sourceNode="FCMComposite_1_39" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_15" targetNode="FCMComposite_1_40" sourceNode="FCMComposite_1_22" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_18" targetNode="FCMComposite_1_54" sourceNode="FCMComposite_1_40" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_23" targetNode="FCMComposite_1_41" sourceNode="FCMComposite_1_27" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_24" targetNode="FCMComposite_1_56" sourceNode="FCMComposite_1_41" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_37" targetNode="FCMComposite_1_42" sourceNode="FCMComposite_1_32" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_38" targetNode="FCMComposite_1_58" sourceNode="FCMComposite_1_42" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_39" targetNode="FCMComposite_1_43" sourceNode="FCMComposite_1_37" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_40" targetNode="FCMComposite_1_60" sourceNode="FCMComposite_1_43" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_41" targetNode="FCMComposite_1_44" sourceNode="FCMComposite_1_63" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_42" targetNode="FCMComposite_1_45" sourceNode="FCMComposite_1_19" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_43" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_45" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_44" targetNode="FCMComposite_1_46" sourceNode="FCMComposite_1_21" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_46" targetNode="FCMComposite_1_47" sourceNode="FCMComposite_1_18" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_48" targetNode="FCMComposite_1_48" sourceNode="FCMComposite_1_26" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_50" targetNode="FCMComposite_1_49" sourceNode="FCMComposite_1_31" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_52" targetNode="FCMComposite_1_65" sourceNode="FCMComposite_1_36" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_55" targetNode="FCMComposite_1_66" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_64" targetNode="FCMComposite_1_69" sourceNode="FCMComposite_1_73" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_53" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_46" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_56" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_47" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_58" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_48" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_59" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_49" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_76" targetNode="FCMComposite_1_20" sourceNode="FCMComposite_1_65" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_45" targetNode="FCMComposite_1_73" sourceNode="FCMComposite_1_66" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_49" targetNode="FCMComposite_1_77" sourceNode="FCMComposite_1_19" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_51" targetNode="FCMComposite_1_77" sourceNode="FCMComposite_1_21" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_54" targetNode="FCMComposite_1_77" sourceNode="FCMComposite_1_18" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_60" targetNode="FCMComposite_1_77" sourceNode="FCMComposite_1_31" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_103" targetNode="FCMComposite_1_81" sourceNode="FCMComposite_1_26" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_104" targetNode="FCMComposite_1_81" sourceNode="FCMComposite_1_36" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_64" sourceNode="FCMComposite_1_27" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_20" targetNode="FCMComposite_1_64" sourceNode="FCMComposite_1_37" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_22" targetNode="FCMComposite_1_68" sourceNode="FCMComposite_1_12" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_26" targetNode="FCMComposite_1_68" sourceNode="FCMComposite_1_15" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_35" targetNode="FCMComposite_1_68" sourceNode="FCMComposite_1_22" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_36" targetNode="FCMComposite_1_68" sourceNode="FCMComposite_1_32" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="FCMComposite_1_74" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_61" targetNode="FCMComposite_1_19" sourceNode="FCMComposite_1_74" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_63" targetNode="FCMComposite_1_70" sourceNode="FCMComposite_1_10" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_82" targetNode="FCMComposite_1_21" sourceNode="FCMComposite_1_70" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_88" targetNode="FCMComposite_1_75" sourceNode="FCMComposite_1_17" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_94" targetNode="FCMComposite_1_18" sourceNode="FCMComposite_1_75" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_98" targetNode="FCMComposite_1_76" sourceNode="FCMComposite_1_30" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_99" targetNode="FCMComposite_1_31" sourceNode="FCMComposite_1_76" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_100" targetNode="FCMComposite_1_78" sourceNode="FCMComposite_1_35" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_102" targetNode="FCMComposite_1_79" sourceNode="FCMComposite_1_25" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_105" targetNode="FCMComposite_1_26" sourceNode="FCMComposite_1_79" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_107" targetNode="FCMComposite_1_36" sourceNode="FCMComposite_1_78" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_19" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_80" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_25" targetNode="FCMComposite_1_82" sourceNode="FCMComposite_1_69" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_30" targetNode="FCMComposite_1_83" sourceNode="FCMComposite_1_20" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_101" targetNode="FCMComposite_1_67" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_106" targetNode="FCMComposite_1_85" sourceNode="FCMComposite_1_67" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_108" targetNode="FCMComposite_1_73" sourceNode="FCMComposite_1_85" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_109" targetNode="FCMComposite_1_86" sourceNode="FCMComposite_1_85" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_110" targetNode="FCMComposite_1_73" sourceNode="FCMComposite_1_86" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_72" sourceNode="FCMComposite_1_71" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueIN">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.queueIN" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+        <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueOUT">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.queueOUT" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+          <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueErr">
+            <propertyName xmi:type="utility:TranslatableString" key="Property.queueErr" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+            <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.GenericSOAPOverHTTPPositiveIntegerNonMandatoryPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.requestTimeout">
+              <propertyName xmi:type="utility:TranslatableString" key="Property.requestTimeout" bundleName="ComIbmSOAPRequest" pluginId="com.ibm.etools.mft.ibmnodes"/>
+              <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.requestTimeout.internal_npcompiler">
+                <propertyName xmi:type="utility:TranslatableString" key="Property.requestTimeout.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_offerCancelled">
+                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_offerCancelled" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                  <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_offerCancelled.internal_npcompiler">
+                    <propertyName xmi:type="utility:TranslatableString" key="Property.URL_offerCancelled.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                    <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_checkScoreResult">
+                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkScoreResult" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                      <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_checkScoreResult.internal_npcompiler">
+                        <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkScoreResult.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                        <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_getDocs">
+                          <propertyName xmi:type="utility:TranslatableString" key="Property.URL_getDocs" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                          <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_getDocs.internal_npcompiler">
+                            <propertyName xmi:type="utility:TranslatableString" key="Property.URL_getDocs.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                            <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_scopeOpty">
+                              <propertyName xmi:type="utility:TranslatableString" key="Property.URL_scopeOpty" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                              <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_scopeOpty.internal_npcompiler">
+                                <propertyName xmi:type="utility:TranslatableString" key="Property.URL_scopeOpty.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                                <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_checkStatus">
+                                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkStatus" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                  <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_checkStatus.internal_npcompiler">
+                                    <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkStatus.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                                    <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_docsSigned">
+                                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_docsSigned" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                      <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_docsSigned.internal_npcompiler">
+                                        <propertyName xmi:type="utility:TranslatableString" key="Property.URL_docsSigned.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                                        <propertyDescriptor groupName="Group.SenderRetry" configurable="true" describedAttribute="Property.dataSource">
+                                          <propertyName xmi:type="utility:TranslatableString" key="Property.dataSource" bundleName="ComIbmDatabase" pluginId="com.ibm.etools.mft.ibmnodes"/>
+                                          <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.dbSource">
+                                            <propertyName xmi:type="utility:TranslatableString" key="Property.dbSource" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                            <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_DELAY">
+                                              <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_DELAY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                              <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_RETRY">
+                                                <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_RETRY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.srvName">
+                                                  <propertyName xmi:type="utility:TranslatableString" key="Property.srvName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                  <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.tableConfigsName">
+                                                    <propertyName xmi:type="utility:TranslatableString" key="Property.tableConfigsName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                    <propertyDescriptor groupName="Group.LogSettings" configurable="true" userDefined="true" describedAttribute="Property.moduleName">
+                                                      <propertyName xmi:type="utility:TranslatableString" key="Property.moduleName" bundleName="letobank/common/utils/logging/AddLog" pluginId="Letobank.COMMON.V2.Lib"/>
+                                                    </propertyDescriptor>
+                                                  </propertyDescriptor>
+                                                </propertyDescriptor>
+                                              </propertyDescriptor>
+                                            </propertyDescriptor>
+                                          </propertyDescriptor>
+                                        </propertyDescriptor>
+                                      </propertyDescriptor>
+                                    </propertyDescriptor>
+                                  </propertyDescriptor>
+                                </propertyDescriptor>
+                              </propertyDescriptor>
+                            </propertyDescriptor>
+                          </propertyDescriptor>
+                        </propertyDescriptor>
+                      </propertyDescriptor>
+                    </propertyDescriptor>
+                  </propertyDescriptor>
+                </propertyDescriptor>
+              </propertyDescriptor>
+            </propertyDescriptor>
+          </propertyDescriptor>
+        </propertyDescriptor>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <attributeLinks promotedAttribute="Property.queueIN" overriddenNodes="FCMComposite_1_1">
+      <overriddenAttribute href="ComIbmMQInput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.queueOUT" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.queueErr" overriddenNodes="FCMComposite_1_85">
+      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.requestTimeout" overriddenNodes="FCMComposite_1_13 FCMComposite_1_16 FCMComposite_1_29 FCMComposite_1_24 FCMComposite_1_34 FCMComposite_1_3">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.requestTimeout"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_offerCancelled" overriddenNodes="FCMComposite_1_34">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_checkScoreResult" overriddenNodes="FCMComposite_1_13">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_getDocs" overriddenNodes="FCMComposite_1_16">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_scopeOpty" overriddenNodes="FCMComposite_1_3">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_checkStatus" overriddenNodes="FCMComposite_1_29">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_docsSigned" overriddenNodes="FCMComposite_1_24">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.dataSource" overriddenNodes="FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_52 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.dataSource"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.dbSource" overriddenNodes="FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_52 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.dbSource"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.DEFAULT_DELAY" overriddenNodes="FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_52 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.DEFAULT_DELAY"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.DEFAULT_RETRY" overriddenNodes="FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_52 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.DEFAULT_RETRY"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.srvName" overriddenNodes="FCMComposite_1_52 FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.srvName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.tableConfigsName" overriddenNodes="FCMComposite_1_52 FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
+      <overriddenAttribute href="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow#Property.tableConfigsName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.moduleName" overriddenNodes="FCMComposite_1_39 FCMComposite_1_46 FCMComposite_1_42 FCMComposite_1_49 FCMComposite_1_41 FCMComposite_1_48 FCMComposite_1_40 FCMComposite_1_47 FCMComposite_1_43 FCMComposite_1_65 FCMComposite_1_38 FCMComposite_1_45 FCMComposite_1_67 FCMComposite_1_66 FCMComposite_1_86">
+      <overriddenAttribute href="letobank/common/utils/logging/AddLog.subflow#Property.moduleName"/>
+    </attributeLinks>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

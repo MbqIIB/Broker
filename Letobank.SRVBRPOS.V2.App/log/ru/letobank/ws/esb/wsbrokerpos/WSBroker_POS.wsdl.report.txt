@@ -1,0 +1,57 @@
+
+
+Importing file: D:\IBM\IntegrationToolkit90\workspace\Letobank.SRVBRPOS.V1.App\WSBroker_POS.wsdl
+
+
+The following is a list of WS-I warning messages found when importing:
+XSD: The location 'WSBroker_POSInOutParms.xsd' has not been resolved because the import is unused, Line: 29, Column: 10
+WS-I BP 1.1: (BP2118) The binding does not have the same list of operations as the WSBroker_POSPortType port type to which it refers., Line: 223, Column: 5
+
+
+The WSDL import will proceed with bindings WSBroker_POSBinding.
+Creating wsdl schema document for file:///D:/IBM/IntegrationToolkit90/workspace/Letobank.SRVBRPOS.V1.App/WSBroker_POS.wsdl.
+Parsing wsdl binding {http://WSBroker_POS.esb.ws.letobank.ru}WSBroker_POSBinding.
+Parsing wsdl binding input scoreOpty.
+Parsing wsdl binding output scoreOpty.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Parsing wsdl binding input checkScoreResult.
+Parsing wsdl binding output checkScoreResult.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Parsing wsdl binding input getDocs.
+Parsing wsdl binding output getDocs.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Parsing wsdl binding input docsSigned.
+Parsing wsdl binding output docsSigned.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Parsing wsdl binding input checkStatus.
+Parsing wsdl binding output checkStatus.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Parsing wsdl binding input offerCancelled.
+Parsing wsdl binding output offerCancelled.
+Parsing wsdl binding fault WSTechnicalException.
+Parsing wsdl binding fault WSTimeoutException.
+Processing doc style for operation scoreOpty.
+Processing doc style for operation checkScoreResult.
+Processing doc style for operation getDocs.
+Processing doc style for operation docsSigned.
+Processing doc style for operation checkStatus.
+Processing doc style for operation offerCancelled.
+Populating WSDL schema WSBroker_POS.xsd.
+Creating file WSBroker_POS.xsd in the workspace.
+Creating file /Letobank.SRVBRPOS.V1.App/WSBroker_POS_InlineSchema1.xsd in the workspace.
+Creating file /Letobank.SRVBRPOS.V1.App/Letobank.SRVBRPOS.V1.App/WSCommonTypes.xsd in the workspace.
+Creating file /Letobank.SRVBRPOS.V1.App/WSBroker_POSInOutParms.xsd in the workspace.
+Copying source WSDL WSBroker_POS.wsdl to WSBroker_POS.wsdl.
+
+Elapsed time processing this message definition file: 0.719 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+
