@@ -95,7 +95,7 @@
       <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="316,27">
         <translation xmi:type="utility:ConstantString" string="Route To Label"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="86,590" labelName="scoreOptyRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="86,590" labelName="scoreOpty_Input">
         <translation xmi:type="utility:ConstantString" string="scoreOptyRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="196,26" computeExpression="esql://routine/letobank.srvbrpos.v1.adp#Routing_Compute.Main" computeMode="all">
@@ -108,7 +108,7 @@
       <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="586,670" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="checkScoreResult" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://127.0.0.1:8080/checkScoreResult" sslProtocol="TLS" validateTiming="complete">
         <translation xmi:type="utility:ConstantString" string="checkScopeResult"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="66,670" labelName="checkScoreResultRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="66,670" labelName="checkScoreResult_Input">
         <translation xmi:type="utility:ConstantString" string="checkScoreResultRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_15" location="206,670" mappingExpression="msl://{letobank.srvbrch.v1.adp}#checkScoreResult_Message_Mapping">
@@ -130,7 +130,7 @@
       <nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="866,670">
         <translation xmi:type="utility:ConstantString" string="SOAP Extract1"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="86,730" labelName="getDocsRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="86,730" labelName="getDocs_Input">
         <translation xmi:type="utility:ConstantString" string="getDocsRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_16" location="606,730" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="getDocs" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/getDocs" sslProtocol="TLS" validateTiming="complete">
@@ -145,7 +145,7 @@
       <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_22" location="226,730" mappingExpression="msl://{letobank.srvbrch.v1.adp}#getDocs_Input_Message_Mapping">
         <translation xmi:type="utility:ConstantString" string="getDocs Input Mapping"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_23" location="86,910" labelName="docsSignedRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_23" location="86,910" labelName="docsSigned_Input">
         <translation xmi:type="utility:ConstantString" string="docsSignedRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_24" location="626,930" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="docsSigned" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/docsSigned" sslProtocol="TLS" validateTiming="complete">
@@ -160,7 +160,7 @@
       <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_27" location="226,910" mappingExpression="msl://{letobank.srvbrch.v1.adp}#docsSigned_Input_Message_Mapping">
         <translation xmi:type="utility:ConstantString" string="docsSigned Input Mapping"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_28" location="66,790" labelName="checkStatusRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_28" location="66,790" labelName="checkStatus_Input">
         <translation xmi:type="utility:ConstantString" string="checkStatusRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_29" location="626,810" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="checkStatus" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/checkStatus" sslProtocol="TLS" validateTiming="complete">
@@ -176,7 +176,7 @@
         <translation xmi:type="utility:ConstantString" string="checkStatus Input Mapping"/>
         <longDescription xmi:type="utility:ConstantString" string="Сервис заведения полной формы анкеты (scoreOpty)"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_33" location="86,850" labelName="offerCancelledRequest">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_33" location="86,850" labelName="offerCancelled_Input">
         <translation xmi:type="utility:ConstantString" string="offerCancelledRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_34" location="606,870" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedOperation="offerCancelled" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" webServiceURL="http://localhost:8080/offerCancelled" sslProtocol="TLS" validateTiming="complete">
