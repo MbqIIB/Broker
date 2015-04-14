@@ -16,6 +16,9 @@ $RECYCLE.BIN/
 /.metadata/
 # Windows shortcuts
 *.lnk
+*.bar
+*.log
+*.mbtest
 
 # =========================
 # Operating System Files
