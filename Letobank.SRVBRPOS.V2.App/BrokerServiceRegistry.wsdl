@@ -10,8 +10,7 @@
     <types>
         <xsd:schema elementFormDefault="qualified" targetNamespace="http://siebel.com/CustomUI">
 <xsd:include schemaLocation="CustomUI.xsd"/>
-      <xsd:import namespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" schemaLocation="ATC_Opportunity_POS.xsd"/>
-<xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" schemaLocation="ATC_Broker_Application_PF.xsd"/>
+      <xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" schemaLocation="ATC_Broker_Application_PF.xsd"/>
 </xsd:schema>
     </types>
     <message name="scoreOptyWeb_Input">

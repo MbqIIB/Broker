@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS"
+    xmlns="http://www.siebel.com/xml/ATC%20Opportunity%20POS"
+    xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
     <xsd:complexType name="createApplication">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Application" type="xsdLocal1:Application"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Application"
+                type="xsdLocal1:Application"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="Application">
@@ -16,7 +21,8 @@
             <xsd:element maxOccurs="1" minOccurs="1" name="InsuranceForm" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceType" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="CardType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="PersonalElectronicSignature" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PersonalElectronicSignature"
+                type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="Channel" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="PathCode" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="TtCode" type="xsd:string"/>
@@ -52,71 +58,79 @@
             <xsd:element maxOccurs="1" minOccurs="0" name="ApplicationId" type="xsd:string"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Contact" type="ContactWeb"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Goods" type="GoodsWeb"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ApplicationAttachment" type="ApplicationAttachment"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ApplicationAttachment"
+                type="ApplicationAttachment"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="Contact">
-        <xsd:sequence>
-            <xsd:element maxOccurs="1" minOccurs="1" name="AddressStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="AnswerSecurityQuestion" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BirthDate" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BirthPlace" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="ChangeLastNameFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Citizenship" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Education" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="EmailAddress" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Ipdl" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="LastName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Gender" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="MaritalStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="MiddleName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthFamilyExpenses" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthFamilyIncome" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthPersonalIncome" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="NumberChild" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="NumberDepend" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="PrevLastName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="SecurityQuestion" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="SocialStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="VisualAssesCode" type="xsd:string"/>
+        <xsd:all>
+            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Education" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="Ipdl" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Gender" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ListOfAddress" type="ListOfAddress"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ListOfAsset" type="ListOfAsset"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ListOfPhone" type="ListOfPhone"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactEmployment" type="ListOfContactEmploymentWeb"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactCredential" type="ListOfContactCredential"/>
-        </xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactEmployment"
+                type="ListOfContactEmployment"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactCredential"
+                type="ListOfContactCredential"/>
+        </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ContactWeb">
         <xsd:sequence>
-            <xsd:element maxOccurs="1" minOccurs="1" name="AddressStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="AnswerSecurityQuestion" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BirthDate" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BirthPlace" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="ChangeLastNameFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Citizenship" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Education" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="EmailAddress" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Ipdl" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="LastName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Gender" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="MaritalStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="MiddleName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthFamilyExpenses" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthFamilyIncome" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="MonthPersonalIncome" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="NumberChild" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="NumberDepend" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="PrevLastName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="SecurityQuestion" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="SocialStatus" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="VisualAssesCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfAddress" type="ListOfAddressWeb"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfAsset" type="ListOfAsset"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfPhone" type="ListOfPhone"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactEmployment" type="ListOfContactEmploymentWeb"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContactCredential" type="ListOfContactCredential"/>
+            <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Education" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Gender" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="PrevFirstName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="PrevMiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="CardName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Ipdl" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="Asset" maxOccurs="unbounded" minOccurs="0" type="Asset"/>
+            <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb"/>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContactEmployment"
+                type="ContactEmploymentWeb"/>
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="ContactCredential"
+                type="ContactCredential"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="GoodsWeb">
@@ -235,12 +249,14 @@
     <xsd:element name="ListOfApplicationPos" type="ListOfApplicationPos"/>
     <xsd:complexType name="ListOfApplicationPosTopElmt">
         <xsd:sequence>
-            <xsd:element maxOccurs="1" minOccurs="1" name="ListOfApplicationPos" type="ListOfApplicationPos"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ListOfApplicationPos"
+                type="ListOfApplicationPos"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ListOfApplicationPos">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ApplicationPos" type="ApplicationPos"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ApplicationPos"
+                type="ApplicationPos"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ApplicationPos">
@@ -269,7 +285,8 @@
             <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceCompanyName" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ListOfContact" type="ListOfContact"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ListOfGoods" type="ListOfGoods"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfOpportunityAttachment" type="ListOfOpportunityAttachment"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfOpportunityAttachment"
+                type="ListOfOpportunityAttachment"/>
         </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ListOfContact">
@@ -277,7 +294,6 @@
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Contact" type="Contact"/>
         </xsd:sequence>
     </xsd:complexType>
-
     <xsd:complexType name="ListOfGoods">
         <xsd:sequence>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Goods" type="Goods"/>
@@ -290,7 +306,8 @@
     </xsd:complexType>
     <xsd:complexType name="ListOfOpportunityAttachment">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="OpportunityAttachment" type="OpportunityAttachment"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="OpportunityAttachment"
+                type="OpportunityAttachment"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="OpportunityAttachment">
@@ -308,35 +325,32 @@
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ListOfAddressWeb">
-        <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb"/>
-        </xsd:sequence>
+        <xsd:sequence/>
     </xsd:complexType>
-
     <xsd:complexType name="ListOfAsset">
         <xsd:sequence>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Asset" type="Asset"/>
         </xsd:sequence>
     </xsd:complexType>
-
     <xsd:complexType name="ListOfPhone">
         <xsd:sequence>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Phone" type="Phone"/>
         </xsd:sequence>
     </xsd:complexType>
-
     <xsd:complexType name="ListOfContactEmployment">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactEmployment" type="ContactEmployment"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactEmployment"
+                type="ContactEmployment"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ListOfContactEmploymentWeb">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactEmployment" type="ContactEmploymentWeb"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactEmployment"
+                type="ContactEmploymentWeb"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ContactEmployment">
-        <xsd:sequence>
+        <xsd:all>
             <xsd:element maxOccurs="1" minOccurs="0" name="ContactId" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="EmployeeNumber" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="Employer" type="xsd:string"/>
@@ -345,25 +359,26 @@
             <xsd:element maxOccurs="1" minOccurs="0" name="Position" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="StartDate" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="WorkPhoneNumber" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfWorkAddress" type="ListOfWorkAddress"/>
-        </xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ListOfWorkAddress"
+                type="ListOfWorkAddress"/>
+        </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ContactEmploymentWeb">
-        <xsd:sequence>
+        <xsd:all>
             <xsd:element maxOccurs="1" minOccurs="0" name="EmployeeNumber" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="Employer" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="FioManager" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Industry" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Position" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="StartDate" type="xsd:string"/>
-        </xsd:sequence>
+        </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ListOfContactCredential">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="1" name="ContactCredential" type="ContactCredential"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="ContactCredential"
+                type="ContactCredential"/>
         </xsd:sequence>
     </xsd:complexType>
-
     <xsd:complexType name="ListOfWorkAddress">
         <xsd:sequence>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="WorkAddress" type="WorkAddress"/>

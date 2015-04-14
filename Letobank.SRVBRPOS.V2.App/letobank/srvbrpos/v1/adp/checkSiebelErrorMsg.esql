@@ -10,7 +10,7 @@ CREATE DATABASE MODULE checkSiebelErrorMsg
 		DECLARE oper CHARACTER FIELDNAME(operRef);
 		DECLARE erCode CHARACTER Root.XMLNSC.cus:{oper}.cus:ErrorCode;
 		DECLARE erMesg CHARACTER Root.XMLNSC.cus:{oper}.cus:ErrorMessage;
-		IF erCode<>'0' OR erCode <> NULL OR erMesg<>'' THEN
+		IF COALESCE (erCode,'') <> '' OR COALESCE(erMesg,'')<>''  THEN
 				SET Environment.usr.errorCode = siebelExceptionCode;
 --				THROW USER EXCEPTION VALUES('90001', 'Find error to Siebel in ErrorCode or ErrorMessage');
 		END IF;

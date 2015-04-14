@@ -39,7 +39,7 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V2.App/icons/full/obj16/letobank_srvbrpos_v1_srv_rqhl.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V2.App/icons/full/obj30/letobank_srvbrpos_v1_srv_rqhl.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="47,85" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" urlSelector="/eai_anon_rus/start.swe" useHTTPS="true" allowQueryWSDL="true" validateTiming="complete">
+      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="47,85" wsdlFileName="BrokerServiceRegistry.wsdl" selectedPortType="WSBroker_POSPortType" selectedBinding="ATC_spcCreate_spcApplication" selectedPort="ATC_spcCreate_spcApplication" targetNamespace="http://siebel.com/CustomUI" useHTTPTransport="true" urlSelector="/eai_rus" allowQueryWSDL="true" validateTiming="complete">
         <translation xmi:type="utility:ConstantString" string="SOAP Input"/>
       </nodes>
       <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="773,89" queueName="LETOBANK.ADP.ADPSBL.V1.BRCASHREQ">
