@@ -20,6 +20,7 @@ $RECYCLE.BIN/
 *.log
 *.mbtest
 *.project
+/Letobank.SRVBRPOS.V2.App/*.project
 
 # =========================
 # Operating System Files
